@@ -68,6 +68,8 @@ define("auth_provider", default=None, type=str, help="auth handler class")
 define("url_prefix", type=str, help="base url prefix")
 define("task_runtime_metric_buckets", type=float, default=Histogram.DEFAULT_BUCKETS,
        multiple=True, help="histogram latency bucket value")
+define("extra_queue_names", type=str, default=None,
+       multiple=True, help="extra queue names to monitor")
 
 
 default_options = options

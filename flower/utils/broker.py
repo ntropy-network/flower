@@ -269,6 +269,8 @@ def get_active_queue_names(application):
     for _, info in application.workers.items():
         for q in info.get('active_queues', []):
             queues.add(q['name'])
+    if e := application.options.extra_queue_names:
+        queues.update(e)
     return queues
 
 
